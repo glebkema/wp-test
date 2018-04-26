@@ -1,0 +1,178 @@
+/*
+	Theme Name:   Test
+	Theme URI:    http://wp-test.glebkema.ru/
+	Description:  Test task for the vacancy.
+	Author:       Gleb Kemarsky
+	Author URI:   http://glebkema.ru/
+	Version:      0.5.1
+	License:      GNU General Public License v2 or later
+	License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain:  test-theme */
+
+$color-active: #00acdd
+$color-title:  #262626
+$carousel-outside: 2.5rem
+$transition-active: .05s ease
+$transition-passive: .3s ease-out
+
+=link-passive
+	border-bottom: 1px solid transparent
+	color: inherit
+	transition: border $transition-passive, color $transition-passive
+  
+=link-active
+	border-bottom-color: $color-active
+	border-bottom-color: rgba(0, 123, 255, .85)
+	color: $color-active
+	text-decoration: none
+	transition: border $transition-active, color $transition-active
+
+	
+body
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+
+h1
+	color: $color-title
+	margin: 0 0 1.5rem
+h2
+	color: $color-title
+	margin: 0 0 1.5rem
+	font-size: 1.75rem
+
+
+.header
+	background: #fff
+	color: #1a1a1a
+	min-height: 6rem
+
+.header-phone
+	a
+		font-size: 2rem
+		+link-passive
+
+		&:focus,
+		&:hover
+			+link-active
+
+
+
+.subheader
+	background: #f4f4f4
+	color: #333
+
+.subheader-frontpage
+	margin-bottom: $carousel-outside
+
+
+
+.subheader-navbar 
+	.nav-link
+		color: inherit
+
+	.current-menu-item
+		.nav-link
+			color: $color-active
+
+	.nav-link
+		span
+			+link-passive
+
+		&:focus span,
+		&:hover span
+			+link-active
+
+
+@media (min-width: 768px)
+	.subheader-navbar
+		margin-left: -0.5rem /* -0.75rem padding.nav-link + 0.25rem visual compensation */
+		padding: 0.5rem 0
+	
+		.navbar-nav
+			.nav-link
+				padding: 0.75rem
+
+		
+
+.header-widget-search
+	.form-inline
+		.search-field
+			border-radius: 1.25rem
+			font-weight: 300
+
+
+
+.promo-carousel
+	margin-top: -$carousel-outside
+	top: $carousel-outside
+
+	.carousel-inner
+		background: #2073b2
+
+.promo-carousel-arrows
+	bottom: 1.25rem
+	right: 1.5rem
+
+	.btn
+		background: #007ddd
+		border-color: #007ddd
+		color: #fff
+		min-width: 2.25rem
+		opacity: 0.9
+		transition: opacity $transition-active
+
+		&:last-child
+			border-left: 1px solid #fff
+			border-left-color: rgba(255, 255, 255, 0.3)
+
+		&:focus,
+		&:hover
+			opacity: 1
+
+.promo-content
+	color: #fff
+
+.promo-content-about
+	color: #fff
+	font-size: 1.375rem
+
+.promo-content-button
+	background-color: #fff
+	border-color: #fff
+	color: $color-active
+
+.promo-content-date
+	span
+		opacity: 0.5
+
+.promo-image
+	background-position: 50% 25%
+	background-repeat: no-repeat
+	background-size: cover
+	opacity: 0.8
+	min-height: 21rem
+
+
+
+.aside-widget-about 
+	.textwidget
+		background: #ec9d13
+		border-radius: 0.25rem
+		color: #fff
+		padding: 1.75rem 2.25rem
+
+
+
+.news-title
+	color: #808080
+	font-size: 1rem
+
+
+
+.footer
+	background: #191919
+	color: #ccc
+	min-height: 14rem
+
+	
+::placeholder
+	color: #9d9d9d 
